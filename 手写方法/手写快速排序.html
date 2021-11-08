@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+
+    function quickSort(arr) {
+        if (arr.length <= 1) {
+            return arr
+        }
+        // 选出一个值
+        var center = arr.shift()
+        // 定义左右两个数组，小的放左边，大的放右边
+        var leftArr = []
+        var rightArr = []
+        arr.forEach(function (item) {
+            if (item < center) leftArr.push(item)
+            else rightArr.push(item)
+        })
+        // 合并左中右三个数组
+        // var result = quickSort(leftArr).concat(center, quickSort(rightArr))
+        var result = [...quickSort(leftArr),center,...quickSort(rightArr)]
+        // console.log(leftArr,center,rightArr)
+        return result
+    }
+
+    // console.time("time")
+    var arr = [5, 3, 2, 6, 2, 4, 7, 23, 2]
+    console.log(quickSort(arr))
+    // console.timeEnd("time")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // //快速排序
+    // function quickSort(arr) {
+    //     //排序之前先判断数组的长度，如果长度小于等于1 的时候 则直接把当前的数组返回即可
+    //     if (arr.length <= 1) {
+    //         return arr;
+    //     }
+    //
+    //     //选出一个值
+    //     var center = arr.shift();
+    //
+    //     //定义左右两个数组
+    //     var left = [];
+    //     var right = [];
+    //
+    //     //把小于center的放在左边数组中，把大于center的放在右边数组中
+    //     arr.forEach(function (item, index) {
+    //         if (item < center) {
+    //             left.push(item);
+    //         } else {
+    //             right.push(item);
+    //         }
+    //     })
+    //
+    //     console.log(left, center, right);
+    //     //合并左中右三个数组
+    //     var result = quickSort(left).concat(center, quickSort(right))
+    //     // console.log(result)
+    //
+    //     //函数应该返回左中右合并后的值
+    //     return result;
+    // }
+    //
+    //
+    // //使用
+    // var arr = [30, 12, 43, 5, 12, 76, 34, 21, 3, 10];
+    // var result = quickSort(arr);
+
+</script>
+</html>

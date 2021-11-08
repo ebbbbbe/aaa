@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function bSort(arr) {
+        let len = arr.length
+        for (let i = 0; i < len - 1; i++) {
+            for (let j = 0; j < len - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {      // 大的放右边 第一个小于第二个不交换位置
+                    // let temp = arr[j]
+                    // arr[j] = arr[j + 1]
+                    // arr[j + 1] = temp
+                    [arr[j],arr[j + 1]] = [arr[j + 1], arr[j]]
+                }
+            }
+        }
+        return arr
+    }
+
+    console.time("time")
+    let arr = [5, 3, 2, 6, 2, 4, 7, 23, 2]
+    console.log(bSort(arr))
+    console.timeEnd("time")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // // 冒泡排序
+    // // let arr = [5, 4, 3, 2, 1];
+    // let arr = [4, 1, 2, 3, 5];
+    // for (let i = 0; i < arr.length - 1; i++) { // 外层循环管趟数
+    //     for (let j = 0; j < arr.length - i - 1; j++) { // 里面的循环管 每一趟的交换次数
+    //         // 内部交换2个变量的值 前一个和后面一个数组元素相比较
+    //         if (arr[j] < arr[j + 1]) {
+    //             let temp = arr[j];
+    //             arr[j] = arr[j + 1];
+    //             arr[j + 1] = temp;
+    //         }
+    //     }
+    // }
+    // console.log(arr);
+</script>
+</html>

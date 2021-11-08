@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button>提交</button>
+    <script>
+        let inp = document.querySelector('input')
+        let but = document.querySelector('button')
+        but.onclick = function() {
+            var userMes = inp.value;
+            if (userMes.length === 11) {
+                // 如果是11位 则判断是否是纯数字
+                if (isNaN(userMes)) {
+                    // 如果userMes是非纯数字 isNaN返回true
+                    alert('有非法字符')
+                        // 清空
+                    inp.value = '';
+                } else {
+                    alert('成功')
+                }
+            } else {
+                alert('不是11位有效字符')
+                    // 清空
+                inp.value = '';
+            }
+
+        }
+    </script>
+</body>
+
+</html>

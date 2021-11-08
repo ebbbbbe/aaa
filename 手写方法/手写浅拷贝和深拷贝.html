@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+
+    // function checkType(o) {
+    //     return Object.prototype.toString.call(o).toLowerCase().slice(8, -1);
+    // }
+    //
+    // function deepClone(o) {
+    //     // 判断当前拷贝的是对象或者数组
+    //     if(checkType(o) === 'object'){
+    //         var result = {}
+    //     }else if(checkType(o) === 'array'){
+    //         var result = []
+    //     }else {
+    //         return o
+    //     }
+    //
+    //     for (var k in o) {
+    //         result[k] = deepClone(o[k])
+    //     }
+    //     return result
+    // }
+    // var o1 = {
+    //     name: 'laowang',
+    //     age:18,
+    //     score: [100, 90]
+    // }
+    // var o2 = deepClone(o1)
+    // console.log(o2.score === o1.score)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // // 浅拷贝
+    // var o1 = {
+    //     name: "laowang",
+    //     age: 18,
+    //     score: [100, 90, 80],
+    //     do: function () {}
+    // }
+    //
+    // //把o1拷贝一份
+    // var o2 = {};
+    //
+    // //拷贝对象的时候，只拷贝的一层，被称作为浅拷贝
+    //
+    // //分别看o1中有哪些属性，给o2扩展一份
+    // for (var key in o1) {
+    //     //得到每一个key 把key设置给o2
+    //     o2[key] = o1[key]
+    // }
+    //
+    // console.log(o2, o1, o2 === o1);
+    // //浅拷贝后，内部属性如果是一个对象类型，则是同一个对象
+    // console.log(o2.score === o1.score);
+
+
+
+
+    // 深拷贝
+    function checkType(o) {
+        return Object.prototype.toString.call(o).toLowerCase().slice(8, -1);
+    }
+
+    //深拷贝
+    function deepClone(o) {
+        //判断当前拷贝的是对象或者数组
+        if (checkType(o) === 'object') {
+            var result = {};
+        } else if (checkType(o) === 'array') {
+            var result = [];
+        } else {
+            //如果不是对象和数组，则不进行拷贝，直接把当前值返回即可
+            return o;
+        }
+
+        //如果当前的值是对象或者数组 则开始拷贝
+        for (var key in o) {        // key = name    o[key] = 'laowang'
+            // console.log(o[key], key)
+            result[key] = deepClone(o[key]);
+        }
+
+        return result;
+    }
+
+
+    //使用
+    var o1 = {
+        name: "laowang",
+        age: 18,
+        score: [100, 90, 80]
+    }
+    var o2 = deepClone(o1)
+    // console.log(o2);
+    // console.log(o2.score === o1.score); //深拷贝
+
+
+
+</script>
+</html>

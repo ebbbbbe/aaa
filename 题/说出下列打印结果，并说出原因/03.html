@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var foo = 1;
+        (function foo() {
+            foo = 10;
+            console.log(foo); //foo(){foo = 10; console.log(foo)}
+        }())
+        /*  原因：
+        js解释器在遇到非匿名立即执行函数时
+        会创建特定的辅助对象 将函数名作为一个属性 因此函数内部可以访问到foo foo只能读取 不能修改
+
+ */
+    </script>
+</body>
+
+</html>
