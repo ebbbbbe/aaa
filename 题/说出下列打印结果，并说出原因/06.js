@@ -58,13 +58,13 @@ console.log(move(arr,k)); */
 // 07 使用proxy的形式实现一个数据的绑定
 
 // 08 如何把一个字符串的大小取反
-//(大写变小写小写变大写)，例如 'AbC' 变成 'aBc'
+// (大写变小写小写变大写)，例如 'AbC' 变成 'aBc'
 
-/* const str = 'AbC';
-const newStr = [].map.call(str,item=>{
+//* * const str = 'AbC';
+/* const newStr = [].map.call(str,item=>{
     return /[a-z]/.test(item)?item.toUpperCase():item.toLowerCase();
-}).join('')
-console.log(newStr); */
+}).join('') 
+console.log(newStr);  */
 
 // 09 用代码的形式实现一个sleep函数 实现异步延迟
 
@@ -72,10 +72,10 @@ console.log(newStr); */
 /* let sleepCb = (time,cb) => setTimeout(cb,time);
 sleepCb(2000,()=>{
     console.log('time end is running');
-})
+})*/
 
 // 使用prominse对象的形式完成
-
+/*
 let sleep = time => new Promise(resolve => setTimeout(resolve,time));
 sleep(3000).then(res=>{
     console.log('time end is running agin');
@@ -227,6 +227,33 @@ const two = (null || false || "");//null undefinde NaN 返回的布尔值都是f
 const three = ([] || 0 || true);// 
 console.log(one, two, three);
  */
-var sb = "false";
-console.log(!!sb);//结果显示true!
+/* var sb = "false";
+console.log(!!sb)//结果为true */
+
+// 20 下列打印结果是什么
+/* var callback  = function(){
+    console.log(typeof callback);//function
+}
+callback() */
+
+// 20 说出打印结果
+
+/* console.log('runction index.js');
+import {sum} from './' */
+
+// 21 说出打印结果
+/* var a = function(){
+    return typeof arguments; //typeof 任何对象都输出一个object  arguments 返回对象的下标
+}
+console.log(a());//Object */
+
+/* let arr = 'AbC'
+let a = arr.split('');
+let b= a.push(a.shift())
+let c= a.join('')
+console.log(c); */
+
+arr = [1, 2, 3]
+console.log(arr.toString);
+
 

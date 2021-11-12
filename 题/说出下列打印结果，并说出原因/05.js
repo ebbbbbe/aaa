@@ -1,4 +1,4 @@
-var a = 2;
+/* var a = 2;
 var obj = {
     a: 3,
     fn: function() {
@@ -13,4 +13,5 @@ var obj = {
         b(); //2
     }
 }
-obj.fn();
+obj.fn(); */
+
