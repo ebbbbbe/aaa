@@ -49,13 +49,16 @@ test(1, 2, 3, 4, 5) */
 
 // console.log(arr,arr.splice(1,2,'a','b'))
 
-let arr = [1, 2, 3, 4, 5];
+// let arr = [1, 2, 3, 4, 5];
 
-console.log(arr.indexOf(2));
-
-
-toString;
+// console.log(arr.indexOf(2));
 
 
-Array.keys()
-inclueds()
+// toString;
+
+
+// Array.keys()
+// inclueds()
+
+const arr = [23, 43, 324, 453, 232,]
+console.log(arr.call(null));
